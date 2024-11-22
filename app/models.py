@@ -15,3 +15,11 @@ class Product(models.Model):
 
     def __str__(self):
         return self.pname
+    
+
+class School(models.Model):
+    sid=models.IntegerField(primary_key=True)
+    sname=models.CharField(max_length=100)
+    sadd=models.TextField()
+    def __str__(self):
+        return self.sname

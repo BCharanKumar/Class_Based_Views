@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app.views import *
+from django.views.generic import *
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #View Class Inheriting
     path('fbv_str/',fbv_str,name='fbv_str'),
     path('Cbv_str/',Cbv_str.as_view(),name='Cbv_str'),
 
@@ -27,4 +29,9 @@ urlpatterns = [
 
     path('inserting_By_Fbv/',inserting_By_Fbv,name='inserting_By_Fbv'),
     path('Inserting_By_Cbv/',Inserting_By_Cbv.as_view(),name='Inserting_By_Cbv'),
+
+    #TemplateView Class Inheriting
+    path('Renderhtml/',Renderhtml.as_view(),name='Renderhtml'),
+    path('Direct_Renderhtml/',TemplateView.as_view(template_name='Direct_Renderhtml.html'),name='Direct_Renderhtml'),
+    path('SchoolFV/',SchoolFV.as_view(),name='SchoolFV'),
 ]
